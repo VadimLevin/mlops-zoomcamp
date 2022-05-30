@@ -3,6 +3,8 @@ import os
 import pickle
 
 import mlflow
+
+from tqdm import tqdm
 from hyperopt import hp, space_eval
 from hyperopt.pyll import scope
 from mlflow.entities import ViewType
@@ -60,15 +62,20 @@ def run(data_path, log_top):
         max_results=log_top,
         order_by=["metrics.rmse ASC"]
     )
-    for run in runs:
+    for run in (t := tqdm(runs)):
+        t.set_description(run.info.run_id)
         train_and_log_model(data_path=data_path, params=run.data.params)
 
     # select the model with the lowest test RMSE
     experiment = client.get_experiment_by_name(EXPERIMENT_NAME)
-    # best_run = client.search_runs( ...  )[0]
+    best_run = client.search_runs(
+        experiment_ids=experiment.experiment_id,
+        max_results=1,
+        order_by=["metrics.test_rmse ASC"]
+    )[0]
 
     # register the best model
-    # mlflow.register_model( ... )
+    mlflow.register_model(f"runs:/{best_run.info.run_id}/model", "taxi_trip_duration_prediction")
 
 
 if __name__ == '__main__':
