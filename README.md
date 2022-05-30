@@ -13,8 +13,10 @@ $ pip install -r requirements.txt
 ## Fetching data
 
 ```shell
-python fetch_file.py "https://nyc-tlc.s3.amazonaws.com/trip+data/fhv_tripdata_2021-01.parquet" \
+python fetch_file.py "https://nyc-tlc.s3.amazonaws.com/trip+data/green_tripdata_2021-01.parquet" \
     --out datasets
-python fetch_file.py "https://nyc-tlc.s3.amazonaws.com/trip+data/fhv_tripdata_2021-01.parquet" \
+python fetch_file.py "https://nyc-tlc.s3.amazonaws.com/trip+data/green_tripdata_2021-02.parquet" \
+    --out datasets
+python fetch_file.py "https://nyc-tlc.s3.amazonaws.com/trip+data/green_tripdata_2021-03.parquet" \
     --out datasets
 ```
