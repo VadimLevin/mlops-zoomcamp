@@ -20,3 +20,21 @@ python fetch_file.py "https://nyc-tlc.s3.amazonaws.com/trip+data/green_tripdata_
 python fetch_file.py "https://nyc-tlc.s3.amazonaws.com/trip+data/green_tripdata_2021-03.parquet" \
     --out datasets
 ```
+
+## Launching experiment tracking server
+
+```shell
+mlflow ui --backend-store-uri sqlite:///experiment-tracking/mlflow.db --default-artifact-root experiment-tracking/artifacts
+```
+
+## Preprocessing
+
+```shell
+python preprocess_data.py --raw_data_path datasets --dest_path datasets/preprocessed
+```
+
+## Running training
+
+```shell
+python train.py --data_path datasets/preprocessed
+```
