@@ -1,0 +1,3 @@
+_target_: sklearn.ensemble.RandomForestRegressor
+max_depth: 10
+random_state: 0

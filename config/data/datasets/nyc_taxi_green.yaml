@@ -1,0 +1,6 @@
+train:
+  - green_tripdata_2021-01.parquet
+validation:
+  - green_tripdata_2021-02.parquet
+test:
+  - green_tripdata_2021-03.parquet

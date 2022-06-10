@@ -1,0 +1,3 @@
+max_error:
+  _target_: sklearn.metrics.max_error
+  _partial_: true

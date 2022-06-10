@@ -183,4 +183,5 @@ Temporary Items
 .nfs*
 
 /datasets
+/outputs
 

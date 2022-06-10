@@ -1,0 +1,6 @@
+server:
+  ip: "127.0.0.1"
+  port: 5000
+tracking_url: http://${experiment_tracking.server.ip}:${experiment_tracking.server.port}
+enable_autolog: False
+experiment_name: ???

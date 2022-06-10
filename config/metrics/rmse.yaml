@@ -1,0 +1,4 @@
+rmse:
+  _target_: sklearn.metrics.mean_squared_error
+  _partial_: true
+  squared: false
