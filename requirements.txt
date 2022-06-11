@@ -9,3 +9,4 @@ autopep8==1.6.0
 requests==2.27.1
 mlflow==1.26.1
 hyperopt==0.2.7
+prefect==2.0b5

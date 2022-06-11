@@ -11,5 +11,4 @@ pickup_location_key: PUlocationID
 
 categorical_features:
   - PU_DO
-numerical_features:
-  - trip_distance
+numerical_features: []

@@ -1,0 +1,10 @@
+defaults:
+  - _self_
+  - datasets: nyc_taxi_fhv
+  - preprocessing: default_categorical_only
+
+base_url: https://nyc-tlc.s3.amazonaws.com/trip+data
+paths:
+  raw_data: ${hydra:runtime.cwd}/datasets/nyc_taxi_fhv/raw
+  preprocessed: ${hydra:runtime.cwd}/datasets/nyc_taxi_fhv/preprocessed
+fetch_force: false

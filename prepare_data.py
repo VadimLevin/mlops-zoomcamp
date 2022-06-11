@@ -46,7 +46,7 @@ def preprocess_dataset(cfg: DictConfig, dataset_tag: str,
     if dv is None:
         dv = DictVectorizer()
 
-    X, y = preprocess(dataset_df, dv, cfg.preprocessing, fit_dict_vectorizer)
+    X, y = preprocess(cfg.preprocessing, dataset_df, dv, fit_dict_vectorizer)
 
     if fit_dict_vectorizer:
         save_pickle(dv, Path(cfg.paths.preprocessed, f"feature_vectorizer.pkl"))

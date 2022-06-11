@@ -38,3 +38,6 @@ python preprocess_data.py --raw_data_path datasets --dest_path datasets/preproce
 ```shell
 python train.py --data_path datasets/preprocessed
 ```
+
+
+To run with prefect and hydra had to hack prefect code to allow arbitrary parameters. In `site-packages/prefect/flows.py` move `self.parameters = parameter_schema(self.fn)` under the `if self.should_validate_parameters`.

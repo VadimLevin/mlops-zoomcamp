@@ -1,0 +1,14 @@
+valid_duration_in_minutes:
+  min: 1
+  max: 60
+filter_nans: false
+
+drop_off_location_key: DOLocationID
+drop_off_datetime_key: lpep_dropoff_datetime
+pickup_datetime_key: lpep_pickup_datetime
+pickup_location_key: PULocationID
+
+categorical_features:
+  - PU_DO
+numerical_features:
+  - trip_distance
